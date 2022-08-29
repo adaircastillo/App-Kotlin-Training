@@ -10,10 +10,6 @@ fun Contact.getPhotoUrl(): URI {
     return URI(photo)
 }
 
-fun String.capitalization(): String{
-    return this.capitalize()
-}
-
 fun Date.toFormat(format: String): String {
     val formatter = SimpleDateFormat(format, Locale.ENGLISH)
     return formatter.format(this)

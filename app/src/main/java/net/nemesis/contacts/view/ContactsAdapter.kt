@@ -1,4 +1,4 @@
-package net.nemesis.contacts.controller
+package net.nemesis.contacts.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import net.nemesis.contacts.databinding.ItemContactBinding
 import net.nemesis.contacts.model.Contact
 
-class ContactsAdapter(val contacts: ArrayList<Contact>): RecyclerView.Adapter<ContactViewHolder>() {
+class ContactsAdapter(val contacts: ArrayList<Contact>, val listener: ContactsListener?): RecyclerView.Adapter<ContactViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -16,7 +16,7 @@ class ContactsAdapter(val contacts: ArrayList<Contact>): RecyclerView.Adapter<Co
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val contact = contacts[position]
-        holder.bindData(contact)
+        holder.bindData(contact, listener)
     }
 
     override fun getItemCount(): Int = contacts.size

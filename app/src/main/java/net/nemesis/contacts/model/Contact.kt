@@ -1,10 +1,15 @@
 package net.nemesis.contacts.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
+@Entity
 class Contact {
 
+    @PrimaryKey
     @Expose
     @SerializedName("id")
     var idContact: Int = 0
