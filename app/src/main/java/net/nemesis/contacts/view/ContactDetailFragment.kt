@@ -36,7 +36,7 @@ class ContactDetailFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentContactDetailBinding.inflate(inflater, container, false)
         return binding.root
     }

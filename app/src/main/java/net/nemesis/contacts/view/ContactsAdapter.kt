@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import net.nemesis.contacts.databinding.ItemContactBinding
 import net.nemesis.contacts.model.Contact
 
-class ContactsAdapter(val contacts: ArrayList<Contact>, val listener: ContactsListener?): RecyclerView.Adapter<ContactViewHolder>() {
+class ContactsAdapter(val contacts: List<Contact>, val listener: ContactsListener?) : RecyclerView.Adapter<ContactViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val inflater = LayoutInflater.from(parent.context)

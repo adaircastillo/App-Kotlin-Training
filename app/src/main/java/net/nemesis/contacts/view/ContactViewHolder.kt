@@ -34,5 +34,4 @@ class ContactViewHolder(private val binding: ItemContactBinding): RecyclerView.V
 
         }
     }
-
 }
