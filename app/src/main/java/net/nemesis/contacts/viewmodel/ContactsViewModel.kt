@@ -9,7 +9,6 @@ import net.nemesis.contacts.model.RepositoryData
 
 class ContactsViewModel: ViewModel() {
 
-
     private val repository = Repository.get()
 
     lateinit var context: Context

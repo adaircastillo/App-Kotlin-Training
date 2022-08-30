@@ -27,7 +27,7 @@ class ContactsFragment : Fragment() {
     }
 
     private val viewModel: ContactsViewModel by lazy {
-        ViewModelProvider(this).get(ContactsViewModel::class.java)
+        ViewModelProvider(this)[ContactsViewModel::class.java]
     }
 
 
@@ -55,10 +55,6 @@ class ContactsFragment : Fragment() {
         setupObservers()
 
         viewModel.context = requireContext()
-
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-
-        }
     }
 
     private fun setupFragment() {
