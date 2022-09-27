@@ -53,8 +53,6 @@ class ContactsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupFragment()
         setupObservers()
-
-        viewModel.context = requireContext()
     }
 
     private fun setupFragment() {

@@ -11,10 +11,8 @@ class ContactsViewModel: ViewModel() {
 
     private val repository = Repository.get()
 
-    lateinit var context: Context
-
     val contactsLiveData: LiveData<List<Contact>> = liveData {
-        when(val result = repository.getContacts(context)) {
+        when(val result = repository.getContacts()) {
             is RepositoryData.Success -> emit(result.data)
             is RepositoryData.Fail -> errorLiveData.postValue(result.errorMessage)
         }

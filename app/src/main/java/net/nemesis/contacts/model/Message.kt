@@ -6,7 +6,7 @@ import java.util.*
 
 class Message {
 
-    @Expose
+    @Expose(serialize = false, deserialize = true)
     @SerializedName("id")
     var idMessage: Int = 0
 

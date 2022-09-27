@@ -8,6 +8,7 @@ import net.nemesis.contacts.model.Contact
 import net.nemesis.contacts.view.ContactDetailFragment
 import net.nemesis.contacts.view.ContactsFragment
 import net.nemesis.contacts.view.ContactsListener
+import net.nemesis.contacts.view.MessagesFragment
 
 class MainActivity : AppCompatActivity(), ContactsListener {
 
@@ -24,7 +25,12 @@ class MainActivity : AppCompatActivity(), ContactsListener {
     }
 
     override fun sendEmailTo(contact: Contact) {
-        Toast.makeText(this, contact.email, Toast.LENGTH_SHORT).show()
+        supportFragmentManager.commit {
+            add(R.id.fragment_frame, MessagesFragment.newInstance(contact.idContact))
+            addToBackStack(null)
+        }
+
+//        Toast.makeText(this, contact.email, Toast.LENGTH_SHORT).show()
     }
 
     override fun onContactSelected(contact: Contact) {
