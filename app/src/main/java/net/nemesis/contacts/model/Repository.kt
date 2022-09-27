@@ -38,6 +38,7 @@ class Repository private constructor() {
         return try {
             if(services.isInternetAvailable()) {
                 val contacts = services.requestContacts()
+                persistence.insertContacts(contacts.toTypedArray())
                 RepositoryData.Success(contacts)
             }else {
                 val contacts = persistence.getContacts()
